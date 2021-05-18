@@ -1,0 +1,40 @@
+.bi-lg{
+    font-size: x-large;
+    color: #3e3e38;
+}
+.fb-ic:hover .bi-facebook{
+    font-size: xx-large;
+    color: #4267B2;
+    transition: all 3ms ease-in-out;
+}
+.tw-ic:hover .bi-twitter{
+    font-size: xx-large;
+    color: #00acee;
+    transition: all 3ms ease-in-out;
+}
+.ins-ic:hover .bi-instagram{
+    font-size: xx-large;
+    color: #8a3ab9;
+    transition: all 3ms ease-in-out;
+}
+.gplus-ic:hover .bi-google{
+    font-size: xx-large;
+    color: #4285F4;
+    transition: all 3ms ease-in-out;
+}
+.tel-ic:hover .bi-telegram{
+    font-size: xx-large;
+    color: #0088CC;
+    transition: all 3ms ease-in-out;
+}
+.li-ic:hover .bi-linkedin{
+    font-size: xx-large;
+    color: #0e76a8;
+    transition: all 3ms ease-in-out;
+}
+.footer-divider{
+    height: .075rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: #3e3e38;
+}

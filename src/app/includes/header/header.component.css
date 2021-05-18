@@ -1,0 +1,4 @@
+.nav-item:hover .nav-link,
+.nav-item:active .nav-link {
+    color: #af06d5;
+}
