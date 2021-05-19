@@ -1,24 +1,26 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
-
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable , of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.css']
 })
-@NgModule({
-  imports: [
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA5Hw58CWFRm_yRz7a-fU9Wd4V_XRmxBmg'
-    })
-  ],
-})
 export class LocationsComponent implements OnInit {
-  lat = 51.678418;
-  lng = 7.809007;
+  
+  apiLoaded: Observable<boolean>;
+  // apiKey: String = "AIzaSyA5Hw58CWFRm_yRz7a-fU9Wd4V_XRmxBmg";
 
-  constructor() { }
+
+
+  constructor( httpClient: HttpClient) {
+    this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=AIzaSyA5Hw58CWFRm_yRz7a-fU9Wd4V_XRmxBmg', 'callback')
+        .pipe( map(() => true),
+        catchError(() => of(false)),
+      );
+  }
 
   ngOnInit(): void {
   }
